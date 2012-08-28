@@ -47,6 +47,21 @@
 " MakeGreen
 "    Generic test runner that works with nose
 "
+" Xterm color scheme
+if &term =~ "xterm"
+    "256 color --
+    let &t_Co=256
+    " restore screen after quitting
+    " set t_ti=ESC7ESC[rESC[?47h
+    if has("terminfo")
+        let &t_Sf="\ESC[3%p1%dm"
+        let &t_Sb="\ESC[4%p1%dm"
+    else
+        let &t_Sf="\ESC[3%dm"
+        let &t_Sb="\ESC[4%dm"
+    endif
+endif
+
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -239,7 +254,9 @@ if has("gui_running")
     " Remove toolbar
     set guioptions-=T
 else
-    colorscheme torte
+    " colorscheme torte
+    colorscheme lucius
+    set background=dark
 endif
 
 " Paste from clipboard
