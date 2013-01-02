@@ -133,6 +133,10 @@ map <leader>f :CommandT<CR>
 " Ack searching
 nmap <leader>a <Esc>:Ack!
 
+" Tab Settings
+nmap <leader>gt :tabn<CR>
+nmap <leader>gp :tabp<CR>
+
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
